@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+}
+
+.square {
+    height: 50px;
+    width: 50px;
+    border-style: solid;
+    margin: 1px;
+}
