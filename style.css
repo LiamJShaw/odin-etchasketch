@@ -22,8 +22,8 @@ body {
 }
 
 .square {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     border-style: solid;
     margin: 1px;
 }

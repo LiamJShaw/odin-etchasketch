@@ -27,14 +27,12 @@ function generateColumns(gridSize){
     }
 }
 
-const squares = document.querySelectorAll('square');
-squares.forEach((square) => {
+generateGrid(5);
 
-    console.log("Test");
+const squares = document.querySelectorAll('.square');
 
-//   square.addEventListener('mouseenter', () => {
-//     square.style.color = "purple"
-//   });
-});
-
-generateGrid(16);
+squares.forEach(square => {
+    square.addEventListener('mouseenter', () => {
+        square.style.backgroundColor = "purple";
+    })
+})
