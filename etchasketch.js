@@ -49,7 +49,7 @@ gridSizeInput.oninput = function() {
 
 const clearButton = document.querySelector('.clear');
 
-clearButton.addEventListener('onclick', () => {
+clearButton.addEventListener('click', () => {
     clear();
 })
 
