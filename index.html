@@ -9,22 +9,29 @@
     <script src="etchasketch.js" defer></script>
 </head>
 <body>
-    <header><h1>Etch A Sketch</h1></header>
+    <div class="test"></div>
 
-    <div id="container">
+    <div class="container">
+        <header><h1>Etch A Sketch</h1></header>
 
-    </div>
-
-    <div class="controlPanel">
-        <button class="clear">Clear</button>
+        <div id="canvas">
+    
+        </div>
+    
+        <div class="controlPanel">
+            <input type="color" id="colorPicker" value="black">
+            <button id="colorChange">Change Colour</button>
+            <button id="rainbow">Rainbow</button>
+            <button class="clear">Clear</button>
+        </div>
 
         <div class="slidecontainer">
-            
             <h2 class="sliderValue">16</h2>
-    
             <input  type="range" class="slider" min="1" max="50" value="16">
-    </div>
-    
+        </div>
 
+    </div>
+
+    <div class="test"></div>
 </body>
 </html>

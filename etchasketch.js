@@ -1,5 +1,8 @@
-const container = document.querySelector('#container');
+const container = document.querySelector('#canvas');
 const rows = document.getElementsByClassName("row");
+
+let squareColor = "purple";
+let rainbowMode = false;
 
 document.getElementsByClassName('row');
 
@@ -30,13 +33,23 @@ function generateColumns(gridSize) {
 }
 
 function squareEventListeners() {
+
     const squares = document.querySelectorAll('.square');
 
     squares.forEach(square => {
         square.addEventListener('mouseenter', () => {
-            square.style.backgroundColor = 'purple';
+            square.style.backgroundColor = squareColor;
+
+            if (rainbowMode === true) {
+                squareColor = randomColor();
+            }
         })
     })
+}
+
+function randomColor() {
+    let rnd = Math.floor(Math.random()*16777215).toString(16);
+    return "#" + rnd;
 }
 
 const gridSizeInput = document.querySelector(".slider");
@@ -57,5 +70,19 @@ function clear() {
     container.innerHTML = "";
     generateGrid(gridSizeInput.value);  
 }
+
+const colorPickerValue = document.querySelector("#colorPicker");
+const colorPickerButton = document.querySelector("#colorChange");
+
+colorPickerButton.addEventListener('click', () => {
+    squareColor = colorPickerValue.value;
+    rainbowMode = false;
+})
+
+const rainbowButton = document.querySelector("#rainbow");
+
+rainbowButton.addEventListener('click', () => {
+    rainbowMode = true; 
+})
 
 generateGrid(16);

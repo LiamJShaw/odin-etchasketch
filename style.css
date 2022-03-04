@@ -13,17 +13,16 @@ body {
     background-color: black;
     color: white;
     display: flex;
-    flex-direction: column;
+
 }
 
-#container {
-    height: 80%;
+#canvas {
     flex: 1;
-    margin: 1em;
-
+        
     display: flex;
-    flex-direction: column;    
-    justify-content: center;
+    flex-direction: column;
+
+    margin: 1em;
 }
 
 header {
@@ -32,13 +31,12 @@ header {
 }
 
 .row {
+    flex: 1;
     display: flex;
-    justify-content: center;
-    background-color: grey:
 }
 
 .square {
-    flex: 1 1 auto;
+    flex: 1;
     height: auto;
 }
 
@@ -46,19 +44,28 @@ header {
 .square:before {
     content: '';
     display: block;
-    padding-top: 100%;    
+    padding-top: 100%;
 }
 
 .controlPanel {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 3em;
+    margin: 1em;
 }
 
-.clear {
-    padding: 1em;
+button {
+    padding: 2em;
     max-width: 40%;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    font-size: large;
+}
+
+.colorChange {
+    margin-left: 0;
 }
 
 .slidecontainer,
@@ -70,3 +77,21 @@ header {
     width: 100%;
     padding: 1em;
 }
+
+.container {
+    flex: 1;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.test {
+    flex: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    .test {
+        flex: 0;
+    }
+  }
