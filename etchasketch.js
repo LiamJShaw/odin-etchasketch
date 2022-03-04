@@ -3,14 +3,14 @@ const rows = document.getElementsByClassName("row");
 
 document.getElementsByClassName('row');
 
-function generateGrid(gridSize){
+function generateGrid(gridSize) {
     console.log(gridSize);
     generateRows(gridSize);
     generateColumns(gridSize);
     squareEventListeners()
 }
 
-function generateRows(gridSize){
+function generateRows(gridSize) {
     for (let i = 0; i < gridSize; i++) {
         const row = document.createElement('div');
         row.classList.add('row');
@@ -18,7 +18,7 @@ function generateRows(gridSize){
     }
 }
 
-function generateColumns(gridSize){
+function generateColumns(gridSize) {
     for (let n = 0; n < gridSize; n++){
         for (let i = 0; i < gridSize; i++) {
             const square = document.createElement('div');
@@ -29,7 +29,7 @@ function generateColumns(gridSize){
     }
 }
 
-function squareEventListeners(){
+function squareEventListeners() {
     const squares = document.querySelectorAll('.square');
 
     squares.forEach(square => {
@@ -44,12 +44,18 @@ const sliderValue = document.querySelector('.sliderValue');
 
 gridSizeInput.oninput = function() {
     sliderValue.textContent = this.value;
-    clear();
+    clear(this.value);
 }
+
+const clearButton = document.querySelector('.clear');
+
+clearButton.addEventListener('onclick', () => {
+    clear();
+})
 
 function clear() {
     container.innerHTML = "";
-    generateGrid(this.value);  
+    generateGrid(gridSizeInput.value);  
 }
 
 generateGrid(16);

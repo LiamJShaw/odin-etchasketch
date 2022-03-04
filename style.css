@@ -4,10 +4,12 @@
     box-sizing: border-box;
 
     font-family: 'Courier New', Courier, monospace;
+
+    overflow: hidden;
 }
 
 body {
-    height: 100vh;
+    height: 80vh;
     background-color: black;
     color: white;
     display: flex;
